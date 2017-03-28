@@ -1,21 +1,40 @@
 <!-- <h1>Pages#batman</h1>
 <p>Find me in app/views/pages/batman.html.erb</p>
 <p>hello</p> -->
-<style media="screen">
+<style>
 .size-image {
     width: 50vw;
-    height: 50vh;
+    height: 45vh;
 }
 </style>
 
 <body>
+<%= params.as_json %>
   <a href="<%= pages_batman_url %>">
   <img border="0" alt="Batman" src="<%= asset_path 'batman_pic' %>" class="size-image">
   </a>
 
+
+  <form action = "<%= pages_save_batmanfan_path %>" method="POST">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="text" name="name_Batman" value="Name">
+    <input type="text" name="email_Batman" value="Email">
+    <input type="submit" name="Send" value="Send">
+  </form>
+
+
+
+
   <a href="<%= pages_superman_url %>">
   <img border="0" alt="Batman" src="<%= asset_path 'superman_pic' %>" class="size-image">
   </a>
+
+  <form action = "<%= pages_save_supermanfan_path %>" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="text" name="name_Superman" value="Name">
+    <input type="text" name="email_Superman" value="Email">
+    <input type="submit" name="Send" value="Send">
+  </form>
 
 
 </body>
