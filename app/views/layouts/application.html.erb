@@ -5,10 +5,18 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags%>
+
+    <!-- <script>
+    body {
+        // background-image: url("<%= asset_path 'batmanvssuperman_pic' %>");
+        background-image: url(batmanvssuperman_pic.jpg);
+        background-color:red;
+    }
+    </script> -->
+
   </head>
 
   <body>
-  
     <%= yield %>
   </body>
 
