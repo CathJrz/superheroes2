@@ -3,6 +3,7 @@ class ExperimentsController < ApplicationController
   end
 
   def page2
+      render :layout => 'bootstrap'
   end
 
   def page3
