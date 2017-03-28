@@ -1,0 +1,21 @@
+<!-- <h1>Pages#batman</h1>
+<p>Find me in app/views/pages/batman.html.erb</p>
+<p>hello</p> -->
+<style media="screen">
+.size-image {
+    width: 50vw;
+    height: 50vh;
+}
+</style>
+
+<body>
+  <a href="<%= pages_batman_url %>">
+  <img border="0" alt="Batman" src="<%= asset_path 'batman_pic' %>" class="size-image">
+  </a>
+
+  <a href="<%= pages_superman_url %>">
+  <img border="0" alt="Batman" src="<%= asset_path 'superman_pic' %>" class="size-image">
+  </a>
+
+
+</body>
