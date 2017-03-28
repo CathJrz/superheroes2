@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'pages/batman_vs_superman'
   post 'pages/save_batmanfan'
   post 'pages/save_supermanfan'
+  get 'pages/count_batmanfans'
   root 'pages#batman_vs_superman'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

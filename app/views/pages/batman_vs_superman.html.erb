@@ -9,7 +9,8 @@
 </style>
 
 <body>
-<%= params.as_json %>
+<p style="color:green"> <%= flash[:notice] %> </p>
+
   <a href="<%= pages_batman_url %>">
   <img border="0" alt="Batman" src="<%= asset_path 'batman_pic' %>" class="size-image">
   </a>
@@ -17,13 +18,14 @@
 
   <form action = "<%= pages_save_batmanfan_path %>" method="POST">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <input type="text" name="name_Batman" value="Name">
-    <input type="text" name="email_Batman" value="Email">
+    <input type="text" name="name_Batman" value="">
+    <input type="text" name="email_Batman" value="">
     <input type="submit" name="Send" value="Send">
   </form>
 
+  <p1>Votos para Batman: <%= Votosbatman.count %> </p1>
 
-
+  <br>
 
   <a href="<%= pages_superman_url %>">
   <img border="0" alt="Batman" src="<%= asset_path 'superman_pic' %>" class="size-image">
@@ -31,10 +33,11 @@
 
   <form action = "<%= pages_save_supermanfan_path %>" method="POST">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <input type="text" name="name_Superman" value="Name">
-    <input type="text" name="email_Superman" value="Email">
+    <input type="text" name="name_Superman" value="">
+    <input type="text" name="email_Superman" value="">
     <input type="submit" name="Send" value="Send">
   </form>
+  <p1>Votos para Superman: <%= Votossuperman.count-1 %> </p1>
 
 
 </body>
