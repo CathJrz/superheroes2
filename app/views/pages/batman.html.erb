@@ -9,10 +9,14 @@
 </body>
 
 
-<script>
+<!-- <script>
   $.backstretch("<%= asset_path 'batman_pic' %>");
-</script>
+</script> -->
 
 <!-- <script>
-  $.backstretch("<%=image_tag("batman_pic.jpg")%>");
+  $.backstretch(<%= image_tag 'batman_pic.jpg' %>);
 </script> -->
+
+<script>
+  $.backstretch("<%= asset_path 'batman_pic.jpg' %>");
+</script>
