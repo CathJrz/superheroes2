@@ -3,8 +3,9 @@
 <p>hello</p> -->
 <style>
 .size-image {
-    width: 50vw;
+    width: 50%;
     height: 45vh;
+    display: inline-block;
 }
 </style>
 
@@ -24,6 +25,7 @@
   </form>
 
   <p1>Votos para Batman: <%= Votosbatman.count %> </p1>
+  <p1>Votos para Batman: <%= @totalbatman %> </p1>
 
   <br>
 
@@ -38,5 +40,5 @@
     <input type="submit" name="Send" value="Send">
   </form>
   <p1>Votos para Superman: <%= Votossuperman.count %> </p1>
-
+  <p1>Votos para Batman: <%= @totalsuperman %> </p1>
 </body>

@@ -15,6 +15,8 @@ class PagesController < ApplicationController
     # @email_superman = params[:email_superman]
     # @votossuperman = Votossuperman.new(name:@name_superman, email:@email_superman)
     # @votossuperman.save
+    @totalbatman = Votosbatman.count
+    @totalsuperman = Votossuperman.count
   end
 
   def save_batmanfan
