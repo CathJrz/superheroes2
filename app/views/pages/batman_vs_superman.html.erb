@@ -3,42 +3,82 @@
 <p>hello</p> -->
 <style>
 .size-image {
-    width: 50%;
-    height: 45vh;
+    width: 100%;
+    height: 100%;
     display: inline-block;
+}
+.container {
+font-size:0}
+
+.container2 {
+  padding-top: 15px;
+  width: 100%;
+  display: inline-table;
+  display: inline-table;
+  text-align: center;
+  font-family: sans-serif;
+  color:white;
+  background-color: black;
+}
+.column {
+display: inline-block;
+width: 50%;
+}
+
+.pregunta{
+  text-align: center;
+  font-family: sans-serif;
+  color:white;
+  font-size: 60;
 }
 </style>
 
 <body>
-<p style="color:green"> <%= flash[:notice] %> </p>
+<div class="container">
+  <div class="column">
+    <a href="<%= pages_batman_url %>">
+    <img border="0" alt="Batman" src="<%= asset_path 'batman_pic.jpg' %>" class="size-image">
+    </a>
+  </div>
 
-  <a href="<%= pages_batman_url %>">
-  <img border="0" alt="Batman" src="<%= asset_path 'batman_pic.jpg' %>" class="size-image">
-  </a>
+  <div class="column">
+    <a href="<%= pages_superman_url %>">
+    <img border="0" alt="Batman" src="<%= asset_path 'superman_pic.jpg' %>" class="size-image">
+    </a>
+  </div>
+</div>
 
+<div class="container2">
+  <div>
+    <p class:"pregunta">Who's going to win?</p>
+  </div>
+  <div class="column">
+    <form action = "<%= pages_save_batmanfan_path %>" method="POST">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" name="name_Batman" value="">
+      <input type="text" name="email_Batman" value="">
+      <input type="submit" name="Send" value="Send">
+    </form>
+    <br>
+    <!-- <p1>Votos para Batman: <%= Votosbatman.count %> </p1> -->
+    <p1><%= @totalbatman %> votes for Batman</p1>
 
-  <form action = "<%= pages_save_batmanfan_path %>" method="POST">
+  </div>
+
+  <div class="column">
+    <form action = "<%= pages_save_supermanfan_path %>" method="POST">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <input type="text" name="name_Batman" value="">
-    <input type="text" name="email_Batman" value="">
-    <input type="submit" name="Send" value="Send">
-  </form>
+      <input type="text" name="name_Superman" value="">
+      <input type="text" name="email_Superman" value="">
+      <input type="submit" name="Send" value="Send">
+    </form>
+    <br>
+    <!-- <p1>Votos para Superman: <%= Votossuperman.count %> </p1> -->
+    <p1><%= @totalsuperman %> votes for Superman</p1>
+  </div
 
-  <p1>Votos para Batman: <%= Votosbatman.count %> </p1>
-  <p1>Votos para Batman: <%= @totalbatman %> </p1>
+</div>
 
-  <br>
+<p style="color:green, text-align:center; font-family:helvetica"> <%= flash[:notice] %> </p>
 
-  <a href="<%= pages_superman_url %>">
-  <img border="0" alt="Batman" src="<%= asset_path 'superman_pic.jpg' %>" class="size-image">
-  </a>
-
-  <form action = "<%= pages_save_supermanfan_path %>" method="POST">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <input type="text" name="name_Superman" value="">
-    <input type="text" name="email_Superman" value="">
-    <input type="submit" name="Send" value="Send">
-  </form>
-  <p1>Votos para Superman: <%= Votossuperman.count %> </p1>
-  <p1>Votos para Batman: <%= @totalsuperman %> </p1>
 </body>

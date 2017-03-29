@@ -21,12 +21,12 @@ class PagesController < ApplicationController
 
   def save_batmanfan
   Votosbatman.create(name: params[:name_batman], email: params[:email_batman])
-  redirect_to pages_batman_vs_superman_path, notice: "Tu voto por Batman se registró correctamente."
+  redirect_to pages_batman_vs_superman_path, notice: "Your vote for Batman was registered correctly."
   end
 
   def save_supermanfan
   Votossuperman.create(name: params[:name_superman], email: [:email_superman])
-    redirect_to pages_batman_vs_superman_path, notice: "Tu voto por Superman se registró correctamente."
+    redirect_to pages_batman_vs_superman_path, notice: "Your vote for Superman was registered correctly."
   end
 
   # def count_batmanfans
